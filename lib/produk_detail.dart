@@ -92,7 +92,37 @@ class _ProdukDetailState extends State<ProdukDetail> {
                                       _current == entry.key ? 0.9 : 0.4)),
                         ),
                       );
-                    }).toList())
+                    }).toList()),
+                const SizedBox(
+                  height: 30,
+                ),
+                Expanded(
+                  child: Stack(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                            color: const Color.fromRGBO(255, 72, 90, 1),
+                            border: Border.all(
+                                color: const Color.fromRGBO(255, 72, 90, 1)),
+                            borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(85))),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 15.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              // color: const Color.fromRGBO(255, 255, 255, 1),
+                              color: Colors.amber,
+                              border: Border.all(
+                                  color:
+                                      const Color.fromRGBO(255, 255, 255, 1)),
+                              borderRadius: const BorderRadius.only(
+                                  topLeft: Radius.circular(75))),
+                        ),
+                      )
+                    ],
+                  ),
+                )
               ],
             ),
             bottomNavigationBar: BottomNavigationBar(
