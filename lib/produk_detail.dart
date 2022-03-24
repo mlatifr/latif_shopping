@@ -339,16 +339,36 @@ class _ProdukDetailState extends State<ProdukDetail> {
                                     Card(
                                       child: Column(
                                         mainAxisSize: MainAxisSize.min,
-                                        children: const <Widget>[
+                                        children: <Widget>[
                                           ListTile(
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  ("assets/images/produk_detail/eiger.png")),
+                                            title: Row(
+                                              children: const [
+                                                CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      ("assets/images/produk_detail/eiger.png")),
+                                                ),
+                                                Text(
+                                                    'The Enchanted Nightingale'),
+                                              ],
                                             ),
-                                            title: Text(
-                                                'The Enchanted Nightingale'),
-                                            subtitle: Text(
+                                            subtitle: const Text(
                                                 'Music by Julie Gable. Lyrics by Sidney Stein.'),
+                                            trailing: Row(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: const [
+                                                Icon(Icons.star,
+                                                    size: 18,
+                                                    color: Color.fromRGBO(
+                                                        60, 125, 217, 1)),
+                                                Text(
+                                                  '5.0',
+                                                  style: TextStyle(
+                                                      fontSize: 15,
+                                                      color: Color.fromRGBO(
+                                                          60, 125, 217, 1)),
+                                                )
+                                              ],
+                                            ),
                                           ),
                                         ],
                                       ),
