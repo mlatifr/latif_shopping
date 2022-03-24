@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -63,9 +64,14 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           body: ListView(
             children: [
-              Card(
-                child: Image.asset("assets/images/page1/heading.png"),
-              ),
+              CarouselSlider.builder(
+                  itemCount: 3,
+                  itemBuilder: (context, index, realIndex) {
+                    return Card(
+                      child: Image.asset("assets/images/page1/heading.png"),
+                    );
+                  },
+                  options: CarouselOptions(autoPlay: true)),
               GridView.builder(
                   itemCount: 10,
                   physics: const NeverScrollableScrollPhysics(),
@@ -102,6 +108,46 @@ class _MyHomePageState extends State<MyHomePage> {
                               ],
                             )));
                   })
+            ],
+          ),
+          bottomNavigationBar: BottomNavigationBar(
+            backgroundColor: Color.fromRGBO(255, 255, 255, 1),
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.task,
+                  color: Color.fromRGBO(198, 196, 196, 1),
+                ),
+                label: 'Home',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.repeat,
+                  color: Color.fromRGBO(198, 196, 196, 1),
+                ),
+                label: 'Home',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.home,
+                  color: Color.fromRGBO(198, 196, 196, 1),
+                ),
+                label: 'Home',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.align_vertical_bottom_sharp,
+                  color: Color.fromRGBO(198, 196, 196, 1),
+                ),
+                label: 'Home',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.person,
+                  color: Color.fromRGBO(198, 196, 196, 1),
+                ),
+                label: 'Home',
+              ),
             ],
           )),
     );
