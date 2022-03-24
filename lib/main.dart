@@ -262,7 +262,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               BottomNavigationBarItem(
                 icon: Icon(
-                  Icons.repeat,
+                  Icons.swap_horiz,
                   color: Color.fromRGBO(198, 196, 196, 1),
                 ),
                 label: 'Home',
@@ -276,7 +276,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               BottomNavigationBarItem(
                 icon: Icon(
-                  Icons.align_vertical_bottom_sharp,
+                  Icons.assessment,
                   color: Color.fromRGBO(198, 196, 196, 1),
                 ),
                 label: 'Home',

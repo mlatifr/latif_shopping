@@ -1,4 +1,7 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+
+final List<String> imgList = ['1', '2', '3'];
 
 class ProdukDetail extends StatefulWidget {
   const ProdukDetail({Key? key}) : super(key: key);
@@ -8,6 +11,16 @@ class ProdukDetail extends StatefulWidget {
 }
 
 class _ProdukDetailState extends State<ProdukDetail> {
+  final List<Widget> imageSliders = imgList
+      .map((item) => Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(45),
+                child: Image.asset("assets/images/page1/audio1.png")),
+          ))
+      .toList();
+  final CarouselController _controller = CarouselController();
+  int _current = 0;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -32,19 +45,55 @@ class _ProdukDetailState extends State<ProdukDetail> {
                     Row(
                       children: const [
                         Icon(
-                          Icons.ac_unit_sharp,
-                          color: Color.fromRGBO(255, 72, 90, 1),
+                          Icons.shopping_bag_rounded,
+                          color: Color.fromRGBO(100, 161, 244, 1),
                         ),
                         Icon(
-                          Icons.ac_unit_sharp,
-                          color: Color.fromRGBO(223, 174, 29, 1),
+                          Icons.notifications,
+                          color: Color.fromRGBO(255, 72, 90, 1),
                         ),
                       ],
                     ),
                   ]),
             ),
-            body: Stack(
-              children: const [Positioned(child: Text('body'))],
+            body: Column(
+              children: [
+                CarouselSlider(
+                  items: imageSliders,
+                  carouselController: _controller,
+                  options: CarouselOptions(
+                      autoPlay: true,
+                      enlargeCenterPage: true,
+                      aspectRatio: 2.0,
+                      onPageChanged: (index, reason) {
+                        setState(() {
+                          _current = index;
+                        });
+                      }),
+                ),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: imgList.asMap().entries.map((entry) {
+                      return GestureDetector(
+                        onTap: () => _controller.animateToPage(entry.key),
+                        child: Container(
+                          width: 50,
+                          height: 12.0,
+                          margin: const EdgeInsets.symmetric(horizontal: 4.0),
+                          decoration: BoxDecoration(
+                              borderRadius: const BorderRadius.all(
+                                  Radius.elliptical(90, 90)),
+                              // shape: BoxShape.circle,
+                              color: (Theme.of(context).brightness ==
+                                          Brightness.dark
+                                      ? const Color.fromRGBO(60, 125, 217, 1)
+                                      : const Color.fromRGBO(100, 161, 244, 1))
+                                  .withOpacity(
+                                      _current == entry.key ? 0.9 : 0.4)),
+                        ),
+                      );
+                    }).toList())
+              ],
             ),
             bottomNavigationBar: BottomNavigationBar(
               backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
@@ -58,7 +107,7 @@ class _ProdukDetailState extends State<ProdukDetail> {
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(
-                    Icons.repeat,
+                    Icons.swap_horiz,
                     color: Color.fromRGBO(198, 196, 196, 1),
                   ),
                   label: 'Home',
@@ -72,7 +121,7 @@ class _ProdukDetailState extends State<ProdukDetail> {
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(
-                    Icons.align_vertical_bottom_sharp,
+                    Icons.assessment,
                     color: Color.fromRGBO(198, 196, 196, 1),
                   ),
                   label: 'Home',
