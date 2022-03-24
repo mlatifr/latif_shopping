@@ -56,7 +56,8 @@ class _ProdukDetailState extends State<ProdukDetail> {
                     ),
                   ]),
             ),
-            body: Column(
+            body: ListView(
+              shrinkWrap: true,
               children: [
                 CarouselSlider(
                   items: imageSliders,
@@ -96,33 +97,172 @@ class _ProdukDetailState extends State<ProdukDetail> {
                 const SizedBox(
                   height: 30,
                 ),
-                Expanded(
-                  child: Stack(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                            color: const Color.fromRGBO(255, 72, 90, 1),
-                            border: Border.all(
-                                color: const Color.fromRGBO(255, 72, 90, 1)),
-                            borderRadius: const BorderRadius.only(
-                                topLeft: Radius.circular(85))),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 15.0),
-                        child: Container(
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Stack(
+                      children: [
+                        Container(
+                          height: 100,
                           decoration: BoxDecoration(
-                              // color: const Color.fromRGBO(255, 255, 255, 1),
-                              color: Colors.amber,
+                              color: const Color.fromRGBO(255, 72, 90, 1),
                               border: Border.all(
-                                  color:
-                                      const Color.fromRGBO(255, 255, 255, 1)),
+                                  color: const Color.fromRGBO(255, 72, 90, 1)),
                               borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(75))),
+                                  topLeft: Radius.circular(85))),
                         ),
-                      )
-                    ],
-                  ),
-                )
+                        Padding(
+                          padding: const EdgeInsets.only(top: 15.0),
+                          child: Container(
+                            constraints: BoxConstraints(
+                                minHeight:
+                                    MediaQuery.of(context).size.height * .50),
+                            decoration: BoxDecoration(
+                                color: const Color.fromRGBO(255, 255, 255, 1),
+                                // color: Colors.amber,
+                                border: Border.all(
+                                    color:
+                                        const Color.fromRGBO(255, 255, 255, 1)),
+                                borderRadius: const BorderRadius.only(
+                                    topLeft: Radius.circular(75))),
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 35.0, top: 25),
+                              child: Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      const Text('Tas Gucci'),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Container(
+                                            decoration: const BoxDecoration(
+                                              color: Color.fromRGBO(
+                                                  223, 174, 29, 1),
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(10)),
+                                            ),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: const [
+                                                Padding(
+                                                  padding: EdgeInsets.all(2.0),
+                                                  child: Text(
+                                                    'Barang Bekas',
+                                                    style: TextStyle(
+                                                        fontSize: 12,
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                        color: Colors.white),
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            width: 10,
+                                          ),
+                                          Container(
+                                            decoration: const BoxDecoration(
+                                              color: Color.fromRGBO(
+                                                  60, 125, 217, 1),
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(10)),
+                                            ),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: const [
+                                                Padding(
+                                                  padding: EdgeInsets.all(2.0),
+                                                  child: Text(
+                                                    'Stok 100',
+                                                    style: TextStyle(
+                                                        fontSize: 12,
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                        color: Colors.white),
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            width: 10,
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 5),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Column(
+                                        children: const [
+                                          Text(
+                                            "Rp 126.000",
+                                            style: TextStyle(
+                                                fontSize: 15.0,
+                                                fontWeight: FontWeight.w300,
+                                                color: Color.fromRGBO(
+                                                    100, 161, 244, 1),
+                                                decoration:
+                                                    TextDecoration.lineThrough),
+                                          ),
+                                          Text(
+                                            "Rp 100.500",
+                                            style: TextStyle(
+                                              fontSize: 15.0,
+                                              fontWeight: FontWeight.w800,
+                                              color: Color.fromRGBO(
+                                                  100, 161, 244, 1),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Container(
+                                        decoration: const BoxDecoration(
+                                          color:
+                                              Color.fromRGBO(60, 125, 217, 1),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(10)),
+                                        ),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: const [
+                                            Padding(
+                                              padding: EdgeInsets.all(2.0),
+                                              child: Text(
+                                                'Diskon 10%',
+                                                style: TextStyle(
+                                                    fontSize: 12,
+                                                    fontWeight: FontWeight.w600,
+                                                    color: Colors.white),
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
               ],
             ),
             bottomNavigationBar: BottomNavigationBar(
