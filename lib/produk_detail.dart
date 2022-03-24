@@ -112,7 +112,9 @@ class _ProdukDetailState extends State<ProdukDetail> {
                                   topLeft: Radius.circular(85))),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(top: 15.0),
+                          padding: const EdgeInsets.only(
+                            top: 15.0,
+                          ),
                           child: Container(
                             constraints: BoxConstraints(
                                 minHeight:
@@ -126,8 +128,8 @@ class _ProdukDetailState extends State<ProdukDetail> {
                                 borderRadius: const BorderRadius.only(
                                     topLeft: Radius.circular(75))),
                             child: Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 35.0, top: 25),
+                              padding: const EdgeInsets.only(
+                                  left: 35.0, top: 25, right: 25),
                               child: Column(
                                 children: [
                                   Row(
@@ -180,7 +182,8 @@ class _ProdukDetailState extends State<ProdukDetail> {
                                                   MainAxisAlignment.center,
                                               children: const [
                                                 Padding(
-                                                  padding: EdgeInsets.all(2.0),
+                                                  padding: EdgeInsets.only(
+                                                      left: 2.0),
                                                   child: Text(
                                                     'Stok 100',
                                                     style: TextStyle(
@@ -253,7 +256,103 @@ class _ProdukDetailState extends State<ProdukDetail> {
                                         ),
                                       ),
                                     ],
-                                  )
+                                  ),
+                                  const Divider(),
+                                  const Align(
+                                      alignment: Alignment.bottomLeft,
+                                      child: Text('Vendor')),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Row(
+                                          children: const [
+                                            CircleAvatar(
+                                              backgroundImage: AssetImage(
+                                                  ("assets/images/produk_detail/eiger.png")),
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            Text('Eiger Store')
+                                          ],
+                                        ),
+                                        Row(
+                                          children: [
+                                            Container(
+                                              decoration: const BoxDecoration(
+                                                color: Colors.white,
+                                                borderRadius: BorderRadius.only(
+                                                    bottomRight:
+                                                        Radius.circular(10),
+                                                    topRight:
+                                                        Radius.circular(10)),
+                                              ),
+                                              height: 20,
+                                              child: Row(
+                                                children: const [
+                                                  Icon(Icons.star,
+                                                      size: 18,
+                                                      color: Color.fromRGBO(
+                                                          60, 125, 217, 1)),
+                                                  Text(
+                                                    '5.0 | 200 terjual',
+                                                    style: TextStyle(
+                                                        fontSize: 15,
+                                                        color: Color.fromRGBO(
+                                                            60, 125, 217, 1)),
+                                                  )
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  const Align(
+                                      alignment: Alignment.bottomLeft,
+                                      child: Text('Deskripsi')),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  const Text(
+                                    'Deskripsi In publishing and graphic design,'
+                                    ' Lorem ipsum is a placeholder text commonly '
+                                    'used to demonstrate the visual form of a '
+                                    'document or a typeface without relying on '
+                                    'meaningful content. Lorem ipsum may be used'
+                                    ' as a placeholder before final copy is'
+                                    ' available.',
+                                    textAlign: TextAlign.justify,
+                                  ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  const Align(
+                                      alignment: Alignment.bottomLeft,
+                                      child: Text('Ulasan dan Penilaian')),
+                                  const Divider(),
+                                  for (var i = 0; i < 5; i++)
+                                    Card(
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: const <Widget>[
+                                          ListTile(
+                                            leading: CircleAvatar(
+                                              backgroundImage: AssetImage(
+                                                  ("assets/images/produk_detail/eiger.png")),
+                                            ),
+                                            title: Text(
+                                                'The Enchanted Nightingale'),
+                                            subtitle: Text(
+                                                'Music by Julie Gable. Lyrics by Sidney Stein.'),
+                                          ),
+                                        ],
+                                      ),
+                                    )
                                 ],
                               ),
                             ),
