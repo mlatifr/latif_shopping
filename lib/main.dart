@@ -30,18 +30,11 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final List<Widget> imageSliders = imgList
-      .map((item) => Container(
-            child: Container(
-              margin: const EdgeInsets.all(5.0),
-              child: ClipRRect(
-                  borderRadius: const BorderRadius.all(Radius.circular(5.0)),
-                  child: Stack(
-                    children: <Widget>[
-                      // Image.network(item, fit: BoxFit.cover, width: 1000.0),
-                      Image.asset("assets/images/page1/heading.png"),
-                    ],
-                  )),
-            ),
+      .map((item) => Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(45),
+                child: Image.asset("assets/images/page1/heading.png")),
           ))
       .toList();
   final CarouselController _controller = CarouselController();
@@ -105,8 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           child: Container(
                             width: 50,
                             height: 12.0,
-                            margin: const EdgeInsets.symmetric(
-                                vertical: 4.0, horizontal: 4.0),
+                            margin: const EdgeInsets.symmetric(horizontal: 4.0),
                             decoration: BoxDecoration(
                                 borderRadius: const BorderRadius.all(
                                     Radius.elliptical(90, 90)),
@@ -121,29 +113,6 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         );
                       }).toList())
-
-                  // Row(
-                  //   mainAxisAlignment: MainAxisAlignment.center,
-                  //   children: imgList.asMap().entries.map((entry) {
-                  //     return GestureDetector(
-                  //       onTap: () => _controller.animateToPage(entry.key),
-                  //       child: Container(
-                  //         width: 12.0,
-                  //         height: 12.0,
-                  //         margin: const EdgeInsets.symmetric(
-                  //             vertical: 8.0, horizontal: 4.0),
-                  //         decoration: BoxDecoration(
-                  //             shape: BoxShape.circle,
-                  //             color: (Theme.of(context).brightness ==
-                  //                         Brightness.dark
-                  //                     ? Colors.white
-                  //                     : Colors.black)
-                  //                 .withOpacity(
-                  //                     _current == entry.key ? 0.9 : 0.4)),
-                  //       ),
-                  //     );
-                  //   }).toList(),
-                  // ),
                 ],
               ),
               GridView.builder(
