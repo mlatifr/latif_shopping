@@ -61,47 +61,47 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ]),
           ),
-          body: Column(
+          body: ListView(
             children: [
               Card(
                 child: Image.asset("assets/images/page1/heading.png"),
               ),
-              Expanded(
-                child: GridView.builder(
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                            childAspectRatio: 8.0 / 10.0, crossAxisCount: 2),
-                    itemBuilder: (BuildContext context, int index) {
-                      return Padding(
-                          padding: const EdgeInsets.all(5),
-                          child: Card(
-                              semanticContainer: true,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              clipBehavior: Clip.antiAlias,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Expanded(
-                                      child: Container(
-                                    decoration: const BoxDecoration(
-                                      image: DecorationImage(
-                                          image: AssetImage(
-                                              'assets/images/page1/audio1.png'),
-                                          fit: BoxFit.fill),
-                                    ),
-                                  )),
-                                  const Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: const Text(
-                                        "Name",
-                                        style: TextStyle(fontSize: 18.0),
-                                      )),
-                                ],
-                              )));
-                    }),
-              )
+              GridView.builder(
+                  itemCount: 10,
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      childAspectRatio: 8.0 / 10.0, crossAxisCount: 2),
+                  itemBuilder: (BuildContext context, int index) {
+                    return Padding(
+                        padding: const EdgeInsets.all(5),
+                        child: Card(
+                            semanticContainer: true,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            clipBehavior: Clip.antiAlias,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Expanded(
+                                    child: Container(
+                                  decoration: const BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            'assets/images/page1/audio1.png'),
+                                        fit: BoxFit.fill),
+                                  ),
+                                )),
+                                const Padding(
+                                    padding: EdgeInsets.all(10.0),
+                                    child: Text(
+                                      "Lorem Ipsum",
+                                      style: TextStyle(fontSize: 18.0),
+                                    )),
+                              ],
+                            )));
+                  })
             ],
           )),
     );
