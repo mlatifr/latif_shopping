@@ -61,15 +61,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               const Icon(
-                Icons.ac_unit_sharp,
+                Icons.repeat,
                 color: Color.fromRGBO(100, 161, 244, 1),
               ),
               const Icon(
-                Icons.ac_unit_sharp,
+                Icons.shopping_bag,
                 color: Color.fromRGBO(223, 174, 29, 1),
               ),
               const Icon(
-                Icons.ac_unit_sharp,
+                Icons.notifications,
                 color: Color.fromRGBO(255, 72, 90, 1),
               ),
             ]),
