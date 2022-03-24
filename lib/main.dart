@@ -134,14 +134,96 @@ class _MyHomePageState extends State<MyHomePage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Expanded(
-                                    child: Container(
-                                  decoration: const BoxDecoration(
-                                    image: DecorationImage(
-                                        image: AssetImage(
-                                            'assets/images/page1/audio1.png'),
-                                        fit: BoxFit.fill),
-                                  ),
+                                    child: Stack(
+                                  children: [
+                                    Container(
+                                      decoration: const BoxDecoration(
+                                        color: Color.fromRGBO(223, 174, 29, 1),
+                                        borderRadius: BorderRadius.only(
+                                            bottomRight: Radius.circular(10),
+                                            topRight: Radius.circular(10)),
+                                      ),
+                                      width: MediaQuery.of(context).size.width *
+                                          .30,
+                                      height: 20,
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: const [
+                                          Icon(
+                                            Icons.star,
+                                            size: 15,
+                                          ),
+                                          Text(
+                                            '5.0 | 200+ rating',
+                                            style: TextStyle(fontSize: 12),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    Container(
+                                      decoration: const BoxDecoration(
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                'assets/images/page1/audio1.png'),
+                                            fit: BoxFit.fill),
+                                      ),
+                                    ),
+                                  ],
                                 )),
+                                Padding(
+                                  padding: const EdgeInsets.all(5.0),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Column(
+                                        children: const [
+                                          Text(
+                                            "Rp 6.000",
+                                            style: TextStyle(
+                                                fontSize: 15.0,
+                                                fontWeight: FontWeight.w300,
+                                                color: Color.fromRGBO(
+                                                    100, 161, 244, 1),
+                                                decoration:
+                                                    TextDecoration.lineThrough),
+                                          ),
+                                          Text("Rp 4500",
+                                              style: TextStyle(
+                                                  fontSize: 15.0,
+                                                  fontWeight: FontWeight.w800,
+                                                  color: Color.fromRGBO(
+                                                      100, 161, 244, 1))),
+                                        ],
+                                      ),
+                                      Container(
+                                        decoration: const BoxDecoration(
+                                          color:
+                                              Color.fromRGBO(60, 125, 217, 1),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(10)),
+                                        ),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: const [
+                                            Padding(
+                                              padding: EdgeInsets.all(2.0),
+                                              child: Text(
+                                                'Diskon 10%',
+                                                style: TextStyle(
+                                                    fontSize: 12,
+                                                    fontWeight: FontWeight.w600,
+                                                    color: Colors.white),
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
                                 const Padding(
                                     padding: EdgeInsets.all(10.0),
                                     child: Text(
